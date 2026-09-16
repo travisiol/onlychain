@@ -1,0 +1,45 @@
+{
+  "name": "onlychain",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ONLYCHAIN \u2014 support your favorite creators, pay in $ONLY. Subscriptions, tips and pay-per-view settled wallet to wallet on Robinhood Chain; the site never holds a token.",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "dev": "next dev --port 3766",
+    "build": "next build",
+    "start": "next start --port 3766",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "seed:art": "node scripts/seed-art.mjs",
+    "e2e": "node --experimental-strip-types scripts/e2e.mjs",
+    "e2e:ui": "node --experimental-strip-types scripts/ui-e2e.mjs",
+    "brand": "node scripts/brand.mjs brand-src/logo-dark-original.png brand-src/logo-light-original.png",
+    "go-live": "node --experimental-strip-types scripts/go-live.mjs",
+    "backup": "node scripts/backup.mjs"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.102.7",
+    "@walletconnect/ethereum-provider": "^2.25.0",
+    "clsx": "^2.1.1",
+    "next": "16.3.3",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "server-only": "^0.0.1",
+    "viem": "^2.56.0",
+    "wagmi": "^3.7.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^24",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.3",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.13",
+    "typescript": "^5"
+  }
+}

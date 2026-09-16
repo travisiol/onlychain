@@ -1,0 +1,15 @@
+# docker compose up -d --build
+# Then set the NEXT_PUBLIC_* / SESSION_SECRET / OPS_ADDRESSES values in .env.production (read at build time
+# for NEXT_PUBLIC_*, at run time for the rest) and put the site behind your reverse proxy on :3000.
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.production
+    volumes:
+      - onlychain-data:/data
+    restart: unless-stopped
+volumes:
+  onlychain-data:

@@ -1,0 +1,314 @@
+@import "tailwindcss";
+
+/*
+  ONLYCHAIN — the OnlyFans shell, in the blue of the logo.
+
+  White page, one accent: the logo's blue (#01abfc, sampled pixel-exact from the logo
+  file the owner supplied on 2026-09-16 — the only brand colour on the site). It
+  is the only saturated colour on any screen and it means exactly one
+  thing: an action that moves $ONLY or leads to one (subscribe, tip,
+  unlock, approve, new post). Text is ink and cool greys, borders a faint
+  blue-grey, cards white on white with a 1px line. The blue gradient exists
+  in two places only: the landing panel and a creator's default cover.
+  Nothing else glows.
+*/
+
+@theme {
+  --color-bg: #ffffff;
+  --color-bg-2: #f5f8fb;
+  --color-bg-3: #ebf1f7;
+  --color-ink: #13202b;
+  --color-ink-2: #7a8894;
+  --color-ink-3: #aeb9c3;
+  --color-line: #e6ebf0;
+  --color-line-2: #d3dbe3;
+  --color-accent: #01abfc;
+  --color-accent-2: #0096e0;
+  --color-accent-soft: #e6f6ff;
+  --color-accent-ink: #0072b3;
+  --color-danger: #e5484d;
+  --color-success: #23a26d;
+  --color-gold: #f2b200;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  --radius-card: 8px;
+  --radius-pill: 1000px;
+
+  --shadow-card: 0 1px 2px rgba(28, 23, 48, 0.04), 0 4px 16px rgba(28, 23, 48, 0.05);
+  --shadow-pop: 0 8px 32px rgba(28, 23, 48, 0.14);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+  html {
+    color-scheme: light;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  button {
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
+  input,
+  textarea,
+  select {
+    font: inherit;
+    color: inherit;
+  }
+  ::selection {
+    background: var(--color-accent-soft);
+    color: var(--color-accent-ink);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+  ::placeholder {
+    color: var(--color-ink-3);
+  }
+}
+
+@layer components {
+  /* Pills — every control on the site is a pill, as on the reference. */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: var(--radius-pill);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition:
+      background-color 0.15s ease,
+      color 0.15s ease,
+      border-color 0.15s ease,
+      opacity 0.15s ease;
+  }
+  .btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+  .btn-accent {
+    background: var(--color-accent);
+    color: #fff;
+  }
+  .btn-accent:hover:not(:disabled) {
+    background: var(--color-accent-2);
+  }
+  .btn-outline {
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    background: transparent;
+  }
+  .btn-outline:hover:not(:disabled) {
+    background: var(--color-accent-soft);
+  }
+  .btn-ghost {
+    border: 1px solid var(--color-line-2);
+    color: var(--color-ink);
+    background: #fff;
+  }
+  .btn-ghost:hover:not(:disabled) {
+    background: var(--color-bg-2);
+  }
+  .btn-sm {
+    height: 32px;
+    padding: 0 14px;
+    font-size: 12px;
+  }
+  .btn-lg {
+    height: 48px;
+    padding: 0 28px;
+    font-size: 14px;
+  }
+  .btn-block {
+    width: 100%;
+  }
+
+  /* Fields */
+  .field {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid var(--color-line-2);
+    border-radius: 8px;
+    background: #fff;
+    transition: border-color 0.15s ease;
+  }
+  .field:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+  textarea.field {
+    height: auto;
+    padding: 12px 14px;
+    resize: vertical;
+  }
+  .field-label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-ink-2);
+  }
+
+  /* Cards: white, one line, small radius. */
+  .card {
+    background: #fff;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+  }
+
+  /* Small uppercase labels (section titles in the rails). */
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-ink-2);
+  }
+
+  /* Icon buttons in post footers and headers */
+  .icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: var(--color-ink-2);
+    transition:
+      background-color 0.15s ease,
+      color 0.15s ease;
+  }
+  .icon-btn:hover {
+    background: var(--color-bg-2);
+    color: var(--color-ink);
+  }
+  .icon-btn.is-on {
+    color: var(--color-accent);
+  }
+
+  /* Left-nav rows */
+  .nav-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 48px;
+    padding: 0 14px;
+    border-radius: var(--radius-pill);
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--color-ink);
+    transition: background-color 0.15s ease;
+  }
+  .nav-row:hover {
+    background: var(--color-bg-2);
+  }
+  .nav-row.is-active {
+    font-weight: 700;
+  }
+  .nav-row.is-active svg {
+    color: var(--color-accent);
+  }
+
+  /* Tabs under a profile header */
+  .tab {
+    position: relative;
+    height: 48px;
+    padding: 0 18px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-ink-2);
+  }
+  .tab.is-active {
+    color: var(--color-ink);
+  }
+  .tab.is-active::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: -1px;
+    height: 2px;
+    background: var(--color-accent);
+  }
+
+  .brand-gradient {
+    background-image: linear-gradient(135deg, #013a86 0%, #0064c2 38%, #0094e6 72%, #01abfc 100%);
+  }
+
+  /* The blurred placeholder under a locked post. Never the real image. */
+  .locked-veil {
+    background:
+      radial-gradient(60% 80% at 20% 30%, rgba(1, 171, 252, 0.3), transparent 70%),
+      radial-gradient(50% 70% at 80% 70%, rgba(76, 195, 255, 0.28), transparent 70%),
+      linear-gradient(180deg, #eef3f8 0%, #e2e9f0 100%);
+  }
+
+  .mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+  .truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Mount reveal — CSS, so it plays before hydration. */
+  .fade-up {
+    animation: fade-up 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  .spin {
+    animation: spin 0.9s linear infinite;
+  }
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "onlychain-chain",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ONLYCHAIN onchain side: the OnlyChain hub (subscriptions, tips, pay-per-view in $ONLY, wallet to wallet, no custody) and a mock $ONLY for the local node. Nothing here is deployed anywhere by this package.",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "node": "node scripts/node.mjs",
+    "seed": "hardhat run scripts/seed-local.ts --network localhost",
+    "deploy": "hardhat run scripts/deploy.ts --network robinhood"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.29.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.1.0"
+  }
+}

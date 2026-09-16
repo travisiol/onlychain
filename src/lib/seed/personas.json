@@ -1,0 +1,181 @@
+{
+  "_comment": "Sample creators for the local demo. Addresses are Hardhat's default accounts #1–#10; chain/scripts/seed-local.ts sets these exact plans (price, bundle discounts in bps, trial days) onchain and refuses to run if the accounts differ. Every name is invented.",
+  "creators": [
+    {
+      "account": 1,
+      "address": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "handle": "lunavega",
+      "displayName": "Luna Vega",
+      "category": "Fitness",
+      "bio": "Yoga + mobility coach. Daily flows, 30-day programs and the honest behind-the-scenes of training for a living. New session every morning at 7.",
+      "monthlyPrice": "25",
+      "hue": 268,
+      "verified": true,
+      "discount3Bps": 1000,
+      "discount6Bps": 2000,
+      "discount12Bps": 3000,
+      "trialDays": 3
+    },
+    {
+      "account": 2,
+      "address": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "handle": "marasolis",
+      "displayName": "Mara Solis",
+      "category": "Cosplay",
+      "bio": "Costume maker and cosplayer. Full build logs, pattern files, con vlogs and the outtakes nobody else gets to see.",
+      "monthlyPrice": "15",
+      "hue": 320,
+      "verified": true,
+      "discount3Bps": 0,
+      "discount6Bps": 1500,
+      "discount12Bps": 2500,
+      "trialDays": 0
+    },
+    {
+      "account": 3,
+      "address": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+      "handle": "avalin",
+      "displayName": "Ava Lin",
+      "category": "Art",
+      "bio": "Digital painter. Process videos, brushes, PSDs and one finished piece a week — subscribers vote on the next one.",
+      "monthlyPrice": "12",
+      "hue": 200,
+      "verified": true,
+      "discount3Bps": 1000,
+      "discount6Bps": 1000,
+      "discount12Bps": 2000,
+      "trialDays": 7
+    },
+    {
+      "account": 4,
+      "address": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+      "handle": "noakirei",
+      "displayName": "Noa Kirei",
+      "category": "Fashion",
+      "bio": "Stylist. Lookbooks before they go anywhere else, thrift hauls, fitting-room chaos and try-ons on request.",
+      "monthlyPrice": "20",
+      "hue": 350,
+      "verified": false,
+      "discount3Bps": 0,
+      "discount6Bps": 0,
+      "discount12Bps": 2000,
+      "trialDays": 0
+    },
+    {
+      "account": 5,
+      "address": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+      "handle": "elise.cooks",
+      "displayName": "Elise Marchetti",
+      "category": "Food",
+      "bio": "Chef, ex-restaurant. Recipes with real quantities, weekly live cooks, and the dishes that never made the menu.",
+      "monthlyPrice": "9",
+      "hue": 28,
+      "verified": true,
+      "discount3Bps": 500,
+      "discount6Bps": 1000,
+      "discount12Bps": 1500,
+      "trialDays": 7
+    },
+    {
+      "account": 6,
+      "address": "0x976EA74026E726554dB657fA54763abd0C3a0aa9",
+      "handle": "rubyblaze",
+      "displayName": "Ruby Blaze",
+      "category": "Music",
+      "bio": "DJ and producer. Unreleased tracks, stems, full sets from the booth and a monthly production breakdown.",
+      "monthlyPrice": "18",
+      "hue": 290,
+      "verified": true,
+      "discount3Bps": 0,
+      "discount6Bps": 2000,
+      "discount12Bps": 3000,
+      "trialDays": 0
+    },
+    {
+      "account": 7,
+      "address": "0x14dC79964da2C08b23698B3D3cc7Ca32193d9955",
+      "handle": "siennapark",
+      "displayName": "Sienna Park",
+      "category": "Travel",
+      "bio": "Travel photographer, 41 countries. RAW files, presets, and the places I don't post anywhere public.",
+      "monthlyPrice": "10",
+      "hue": 168,
+      "verified": false,
+      "discount3Bps": 1000,
+      "discount6Bps": 1500,
+      "discount12Bps": 2500,
+      "trialDays": 3
+    },
+    {
+      "account": 8,
+      "address": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
+      "handle": "kaimoreno",
+      "displayName": "Kai Moreno",
+      "category": "Photography",
+      "bio": "Street photography and model work. Free page — the feed is open, the full shoots are pay-per-view.",
+      "monthlyPrice": "0",
+      "hue": 240,
+      "verified": true,
+      "discount3Bps": 0,
+      "discount6Bps": 0,
+      "discount12Bps": 0,
+      "trialDays": 0
+    },
+    {
+      "account": 9,
+      "address": "0xa0Ee7A142d267C1f36714E4a8F75612F20a79720",
+      "handle": "zoelaurent",
+      "displayName": "Zoé Laurent",
+      "category": "ASMR",
+      "bio": "Voice and ASMR. Long-form sleep sessions, personal audio on request, and a new trigger set every Friday.",
+      "monthlyPrice": "8",
+      "hue": 210,
+      "verified": true,
+      "discount3Bps": 0,
+      "discount6Bps": 1000,
+      "discount12Bps": 2000,
+      "trialDays": 7
+    },
+    {
+      "account": 10,
+      "address": "0xBcd4042DE499D14e55001CcbB24a551F3b954096",
+      "handle": "ivychen",
+      "displayName": "Ivy Chen",
+      "category": "Gaming",
+      "bio": "Speedrunner and variety streamer. Subscriber-only runs, route notes, and the VODs that never hit the channel.",
+      "monthlyPrice": "6",
+      "hue": 140,
+      "verified": false,
+      "discount3Bps": 1000,
+      "discount6Bps": 2000,
+      "discount12Bps": 2000,
+      "trialDays": 14
+    }
+  ],
+  "fans": [
+    {
+      "account": 11,
+      "address": "0x71bE63f3384f5fb98995898A86B02Fb2426c5788",
+      "handle": "theo",
+      "displayName": "Theo"
+    },
+    {
+      "account": 12,
+      "address": "0xFABB0ac9d68B0B445fB7357272Ff202C5651694a",
+      "handle": "julesk",
+      "displayName": "Jules K."
+    },
+    {
+      "account": 13,
+      "address": "0x1CBd3b2770909D4e10f157cABC84C7264073C9Ec",
+      "handle": "sam_r",
+      "displayName": "Sam R."
+    },
+    {
+      "account": 14,
+      "address": "0xdF3e18d64BC6A983f673Ab319CCaE4f1a57C7097",
+      "handle": "nina",
+      "displayName": "Nina"
+    }
+  ]
+}
